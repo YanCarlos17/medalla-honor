@@ -1,0 +1,20 @@
+.podiums{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    .podium{
+        text-align: center;
+        &__position{
+
+        }
+        &__img{
+
+        }
+        &__name{
+
+        }
+        &__score{
+            
+        }
+    }
+}

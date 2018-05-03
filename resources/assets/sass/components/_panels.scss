@@ -1,0 +1,81 @@
+.panels{
+    width: 100%;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+
+    input[type=radio]{
+        display: none;
+    }
+
+    label{
+        &,
+        & a{
+            text-decoration: none;
+            display: inline-block;
+            width: 32.5%;
+            text-align: center;
+            color: #f5f6fa;
+        }
+    }
+}
+
+.panel{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateX(100%);
+    transition: all .3s;
+
+    &__trigger{
+        &:checked + label{
+            text-decoration: underline;
+        }
+    }
+
+    
+}
+
+
+#nacional:checked{
+    & ~ #nacional-content{
+        transform: translateX(0);
+    }
+}
+
+#especializacion:checked{
+    & ~ #especializacion-content{
+        transform: translateX(0);
+    }
+
+    & ~ #nacional-content{
+        transform: translateX(-100%);
+    }
+}
+
+#tiendas:checked{
+    & ~ #tiendas-content{
+        transform: translateX(0);
+    }
+}
+#mayoristas:checked{
+    & ~ #tiendas-content{
+        transform: translateX(-100%);
+    }
+    & ~ #mayoristas-content{
+        transform: translateX(0);
+    }
+}
+#supermercados:checked{
+    & ~ #tiendas-content{
+        transform: translateX(-100%);
+    }
+    & ~ #mayoristas-content{
+        transform: translateX(-100%);
+    }
+    & ~ #supermercados-content{
+        transform: translateX(0);
+    }
+}
