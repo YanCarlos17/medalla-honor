@@ -16,7 +16,7 @@ class CreateDistributorTable extends Migration
         Schema::create('distributor', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('user')->unique();
-            $table->string('access_code')->unique();
+            $table->string('access_code',4)->unique();
             $table->string('name',50);
             $table->string('email', 100)->unique();
             $table->unsignedInteger('city_id');

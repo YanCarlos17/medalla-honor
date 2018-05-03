@@ -13,12 +13,12 @@ class CreateDistributorSpecializationTable extends Migration
      */
     public function up()
     {
-        Schema::create('distributor_specialization', function (Blueprint $table) {
-            $table->unsignedInteger('distributor_id');
+        Schema::create('distrib_specialization', function (Blueprint $table) {
+            $table->unsignedInteger('distrib_id');
             $table->unsignedInteger('specialization_id');
 
-            $table->primary(['branchoffice_id', 'specialization_id']);
-            $table->foreign('distributor_id')->references('id')->on('distributor');
+            $table->primary(['distrib_id', 'specialization_id']);
+            $table->foreign('distrib_id')->references('id')->on('distributor');
             $table->foreign('specialization_id')->references('id')->on('specialization');
         });
     }
@@ -30,6 +30,6 @@ class CreateDistributorSpecializationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('distributor_specialization');
+        Schema::dropIfExists('distrib_specialization');
     }
 }
