@@ -14,10 +14,11 @@
         <p class="text-center">Premio a la excelencia</p>
     </header>
     <main>
-        <form class="form" action="">
-            <input type="text" placeholder="NIT">
-            <input type="text" placeholder="Código de acceso">
-            <button class="btn" >Ingresar</button>
+        <form class="form" action="{{ route('login_post') }}" method="post">
+            {{ csrf_field() }}
+            <input type="text" placeholder="Nombre de usuario" name="usuario">
+            <input type="text" placeholder="Código de acceso" name="codigo">
+            <button type="submit" class="btn" >Ingresar</button>
         </form>
     </main>
 </div>

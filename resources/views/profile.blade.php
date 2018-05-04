@@ -17,10 +17,8 @@
             </figure>
             
             <p class="profile__info">
-                John Doe<br>
-                Bogotá D.C.<br>
+                {{ $user->name }}<br>
                 Mayorista<br>
-                Aseo S.A.<br>
             </p>
         </div>
         <div class="score">

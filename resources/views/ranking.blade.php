@@ -20,38 +20,28 @@
             <label class="panel__trigger"><a href="{{ route('profile') }}">Perfil</a></label>
             <div class="panel" id="nacional-content">
                 <div class="podiums">
+                @foreach($nationaltop as $index => $top)
                     <div class="podium">
-                        <span class="podium__position">#1</span>
+                        <span class="podium__position">#{{ $index+1 }}</span>
                         <img class="podium__img" src="" alt="">
-                        <h3 class="podium__name">Kevyn Max</h3>
-                        <p class="podium__score">1000 pts</p>
+                        <h3 class="podium__name">{{ $top->name }}</h3>
+                        <p class="podium__score">{{ $top->total_score }} pts</p>
                     </div>
-                    <div class="podium">
-                        <span class="podium__position">#2</span>
-                        <img class="podium__img" src="" alt="">
-                        <h3 class="podium__name">Margareth Max</h3>
-                        <p class="podium__score">1000 pts</p>
-                    </div>
-                    <div class="podium">
-                        <span class="podium__position">#3</span>
-                        <img class="podium__img" src="" alt="">
-                        <h3 class="podium__name">Louis Done</h3>
-                        <p class="podium__score">1000 pts</p>
-                    </div>
+                @endforeach
                 </div>
                 <table class="table">
                     <tr>
                         <th>No</th>
                         <th>Nombre</th>
                         <th>Puntos</th>
-                        <th>Ciudad</th>
                     </tr>
+                @foreach($national as $index => $position)
                     <tr>
-                        <td>4</td>
-                        <td>Amanda Perea</td>
-                        <td>350</td>
-                        <td>Medellín</td>
+                        <td>{{ $index + 4 }}</td>
+                        <td>{{ $position->name }}</td>
+                        <td>{{ $position->total_score }}</td>
                     </tr>
+                @endforeach
                 </table>
             </div>
             <div class="panel" id="especializacion-content">
@@ -61,111 +51,81 @@
                     <input class="panel__trigger" type="radio" value="supermercados" name="especialidad" id="supermercados"><label for="supermercados">Supermercados</label>
                     <div class="panel" id="tiendas-content">
                         <div class="podiums">
+                        @foreach($storetop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#1</span>
+                                <span class="podium__position">#{{ $index+1 }}</span>
                                 <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Kevyn Max</h3>
-                                <p class="podium__score">1000 pts</p>
+                                <h3 class="podium__name">{{ $top->name }}</h3>
+                                <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
-                            <div class="podium">
-                                <span class="podium__position">#2</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Margareth Max</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
-                            <div class="podium">
-                                <span class="podium__position">#3</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Louis Done</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
+                        @endforeach
                         </div>
                         <table class="table">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
                                 <th>Puntos</th>
-                                <th>Ciudad</th>
                             </tr>
+                        @foreach($store as $index => $position)
                             <tr>
-                                <td>4</td>
-                                <td>Amanda Perea</td>
-                                <td>350</td>
-                                <td>Medellín</td>
+                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $position->name }}</td>
+                                <td>{{ $position->score }}</td>
                             </tr>
+                        @endforeach
                         </table>  
                     </div>
                     <div class="panel" id="mayoristas-content">
                         <div class="podiums">
+                        @foreach($wholesalertop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#1</span>
+                                <span class="podium__position">#{{ $index+1 }}</span>
                                 <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Kevyn Max</h3>
-                                <p class="podium__score">1000 pts</p>
+                                <h3 class="podium__name">{{ $top->name }}</h3>
+                                <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
-                            <div class="podium">
-                                <span class="podium__position">#2</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Margareth Max</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
-                            <div class="podium">
-                                <span class="podium__position">#3</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Louis Done</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
+                        @endforeach
                         </div>
                         <table class="table">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
                                 <th>Puntos</th>
-                                <th>Ciudad</th>
                             </tr>
+                        @foreach($wholesaler as $index => $position)
                             <tr>
-                                <td>4</td>
-                                <td>Amanda Perea</td>
-                                <td>350</td>
-                                <td>Medellín</td>
+                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $position->name }}</td>
+                                <td>{{ $position->score }}</td>
                             </tr>
-                        </table>  
+                        @endforeach
+                        </table>
                     </div>
                     <div class="panel" id="supermercados-content">
-                        <div class="podiums">
+                    <div class="podiums">
+                        @foreach($supermarkettop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#1</span>
+                                <span class="podium__position">#{{ $index+1 }}</span>
                                 <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Kevyn Max</h3>
-                                <p class="podium__score">1000 pts</p>
+                                <h3 class="podium__name">{{ $top->name }}</h3>
+                                <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
-                            <div class="podium">
-                                <span class="podium__position">#2</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Margareth Max</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
-                            <div class="podium">
-                                <span class="podium__position">#3</span>
-                                <img class="podium__img" src="" alt="">
-                                <h3 class="podium__name">Louis Done</h3>
-                                <p class="podium__score">1000 pts</p>
-                            </div>
+                        @endforeach
                         </div>
                         <table class="table">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
                                 <th>Puntos</th>
-                                <th>Ciudad</th>
                             </tr>
+                        @foreach($supermarket as $index => $position)
                             <tr>
-                                <td>4</td>
-                                <td>Amanda Perea</td>
-                                <td>350</td>
-                                <td>Medellín</td>
+                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $position->name }}</td>
+                                <td>{{ $position->score }}</td>
                             </tr>
-                        </table>  
+                        @endforeach
+                        </table> 
                     </div>
                 </div> 
             </div>

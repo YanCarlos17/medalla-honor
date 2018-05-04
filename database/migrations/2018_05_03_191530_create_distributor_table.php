@@ -15,15 +15,14 @@ class CreateDistributorTable extends Migration
     {
         Schema::create('distributor', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('user')->unique();
-            $table->string('access_code',4)->unique();
-            $table->string('name',50);
+            $table->string('username',30)->unique();
+            $table->string('access_code',4);
+            $table->string('password');
+            $table->string('remember_token')->nullable();
+            $table->string('name',30);
             $table->string('email', 100)->unique();
-            $table->unsignedInteger('city_id');
             $table->integer('branch_offices');
             $table->integer('total_score');
-
-            $table->foreign('city_id')->references('id')->on('city');
         });
     }
 

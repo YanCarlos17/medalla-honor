@@ -19,6 +19,7 @@ class CreateScoreHistoricalTable extends Migration
             $table->unsignedInteger('branchoffice_id');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('measuring_id');
+            $table->unsignedInteger('score');
             $table->unsignedInteger('date');
             $table->timestamps();
 

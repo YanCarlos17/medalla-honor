@@ -13,20 +13,32 @@
 
 Route::get('/', [
     'as' => 'login',
-    'uses' => 'LoginController@login'
+    'uses' => 'Auth\LoginController@index'
 ]);
 
-Route::get('/ranking', [
-    'as' => 'ranking',
-    'uses' => 'RankingController@index'
+Route::post('/ingresar', [
+    'as' => 'login_post',
+    'uses' => 'Auth\LoginController@login'
+]);
+Route::get('/salir', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
 ]);
 
-Route::get('/perfil', [
-    'as' => 'profile',
-    'uses' => 'ProfileController@index'
-]);
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/ranking', [
+        'as' => 'ranking',
+        'uses' => 'RankingController@index'
+    ]);
+    
+    Route::get('/perfil', [
+        'as' => 'profile',
+        'uses' => 'ProfileController@index'
+    ]);
+    
+    Route::get('/sucursales', [
+        'as' => 'branch-ofice',
+        'uses' => 'BranchOfficeController@index'
+    ]);
+});
 
-Route::get('/sucursales', [
-    'as' => 'branch-ofice',
-    'uses' => 'BranchOfficeController@index'
-]);

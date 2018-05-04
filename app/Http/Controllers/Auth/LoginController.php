@@ -2,38 +2,51 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function index()
     {
-        $this->middleware('guest')->except('logout');
+        return View('index');
+    }
+
+    public function login(Request $request)
+    {
+        try{/* Valida los datos del formulario de inicio de sesión */
+            $this->validate($request,[
+                'usuario' => 'required|string',
+                'codigo' => 'required|numeric:4',
+            ]);
+
+            if ( Auth::attempt(['username' => $request->get('usuario'), 'access_code' => $request->get('codigo'), 'password' => 'mdhr']) )
+            {
+                return redirect()->route('ranking');
+            }
+            else
+            {
+                return redirect()->route('login');
+            }
+        }
+        catch(\Exception $e)
+        {
+            dd($e);
+        }
+    }
+
+    public function logout()
+    {
+        try{
+            Auth::logout();
+            return redirect()->route('login');
+        }
+        catch(\Exception $e)
+        {
+            dd($e);
+        }
     }
 }
