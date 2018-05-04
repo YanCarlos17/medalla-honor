@@ -40,5 +40,10 @@ Route::group(['middleware' => 'auth'], function(){
         'as' => 'branch-ofice',
         'uses' => 'BranchOfficeController@index'
     ]);
+
+    Route::get('/actualizar-total-puntajes', [
+        'as' => 'update-total-score',
+        'uses' => 'RankingController@update'
+    ]);
 });
 
