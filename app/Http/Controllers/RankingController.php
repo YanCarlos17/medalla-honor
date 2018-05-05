@@ -51,13 +51,17 @@ class RankingController extends Controller
 
     public function update()
     {
-        $score = DB::select('SELECT d.id as id, d.name as name, sum(s.score) as score FROM distributor d LEFT JOIN score s ON d.id = s.distributor_id INNER JOIN branchoffice b ON b.id = s.branchoffice_id GROUP BY d.id, d.name ORDER BY d.id ASC;');
+        $score = DB::select('SELECT d.id as id, d.name as name, sum(s.score) as score FROM distributor d LEFT JOIN score s ON d.id = s.distributor_id INNER JOIN branchoffice b ON b.id = s.branchoffice_id GROUP BY d.id, d.name ORDER BY score DESC;');
 
+        $position = 1;
         foreach($score as $item)
         {
             $distributor = User::find($item->id);
             $distributor->total_score = $item->score;
+            $distributor->national_position = $position;
             $distributor->save();
+
+            $position++;
         }
     }
 }

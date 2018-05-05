@@ -14,28 +14,34 @@
     <main>
         <h1>Mis sucursales</h1>
         <div class="tabs">
+        @foreach( $branchoffices as $branchoffice)
             <div class="tab">
-                <input id="brandoffice-1" type="radio" name="brandoffice">
-                <label for="brandoffice-1">Sucursal uno</label>
+                <input id="brandoffice-{{$branchoffice->id}}" type="radio" name="brandoffice">
+                <label for="brandoffice-{{$branchoffice->id}}">{{$branchoffice->name}}</label>
                 <div class="tab-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+                    <div class="score">
+                        <h2 class="score__title">Puntaje por categorías</h2>
+                        <div class="score__category">
+                            <h3 class="score__subtitle">Resultados</h3>
+                            <ul>
+                                <li>Efectividad <span>100 pts</span></li>
+                                <li>Surtido recomendado <span>250 pts</span></li>
+                                <li>Evacuación <span>300pts</span></li>
+                            </ul>
+                            <h3 class="score__subtitle">Ejecución</h3>
+                            <ul>
+                                <li>Codificación <span>100 pts</span></li>
+                                <li>Planes especiales <span>250 pts</span></li>
+                            </ul>
+                            <h3 class="score__subtitle">ITT</h3>
+                            <ul>
+                                <li>ITT <span>100 pts</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tab">
-                <input id="brandoffice-2" type="radio" name="brandoffice">
-                <label for="brandoffice-2">Sucursal dos</label>
-                <div class="tab-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                </div>
-            </div>
-            <div class="tab">
-                <input id="brandoffice-3" type="radio" name="brandoffice">
-                <label for="brandoffice-3">Sucursal tres</label>
-                <div class="tab-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                </div>
-            </div>
+        @endforeach
         </div>
     </main>
 </div>
