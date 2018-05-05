@@ -24,18 +24,18 @@
                         <div class="score__category">
                             <h3 class="score__subtitle">Resultados</h3>
                             <ul>
-                                <li>Efectividad <span>100 pts</span></li>
-                                <li>Surtido recomendado <span>250 pts</span></li>
-                                <li>Evacuación <span>300pts</span></li>
+                                <li>Efectividad <span>{{ $branchoffice->scoreEfectivity->score }} pts</span></li>
+                                <li>Surtido recomendado <span>{{ $branchoffice->scoreAssortment->score }} pts</span></li>
+                                <li>Evacuación <span>{{ $branchoffice->scoreMovement->score }} pts</span></li>
                             </ul>
                             <h3 class="score__subtitle">Ejecución</h3>
                             <ul>
-                                <li>Codificación <span>100 pts</span></li>
-                                <li>Planes especiales <span>250 pts</span></li>
+                                <li>Codificación <span>{{ $branchoffice->scoreCodification->score }} pts</span></li>
+                                <li>Planes especiales <span>{{ $branchoffice->scoreSpecialPlans->score }} pts</span></li>
                             </ul>
                             <h3 class="score__subtitle">ITT</h3>
                             <ul>
-                                <li>ITT <span>100 pts</span></li>
+                                <li>ITT <span>{{ $branchoffice->scoreITT->score }} pts</span></li>
                             </ul>
                         </div>
                     </div>

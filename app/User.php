@@ -28,6 +28,14 @@ class User extends Authenticatable
     ];
 
     protected $table = 'distributor';
+
+
     public $timestamps = false;
+
+    // Relaciones
+    public function branchoffices()
+    {
+        return $this->hasMany('App\BranchOffice','distributor_id','id');
+    }
 
 }
