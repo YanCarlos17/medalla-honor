@@ -23,6 +23,7 @@ class CreateDistributorTable extends Migration
             $table->string('email', 100)->unique();
             $table->integer('branch_offices');
             $table->integer('total_score');
+            $table->integer('national_position');
         });
     }
 
