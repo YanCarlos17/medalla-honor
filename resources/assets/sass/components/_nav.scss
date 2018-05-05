@@ -2,44 +2,48 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
-    background-color: rgb(28, 127, 145);
+    height: 50px;
+    background-color: #004FFF;
     z-index: 49;
 }
 
 .header{
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 
 /*Damos estilos al menú*/
+
+a{
+    text-decoration: none;
+}
+
 .nav {
     position: absolute;
-    width: 500px;
+    width: 200px;
     height: 100%;
     top: 0;
     left: -665px;
     padding-top: 100px;
     background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 36px 0px 70px -2px rgb(137, 199, 14);
+    box-shadow: 36px 0px 70px -2px rgb(4, 9, 131);
     transition: all .5s ease;
     z-index: 45; 
  
     &__list{
-        margin-top: 130px;
+        margin-top: 30px;
         font-size: 20px;
     }
 /*Estilos de los li del menú*/
     &__item {
         display: block;
-        width: 75%;
-        margin: 0 auto;
+        width: 50%;
+        margin-left: 20px;
         line-height: 2;
         position: relative;
         border-bottom: .5px solid rgb(183, 184, 184);
         background-color: transparent;
         font-family: 'Lato', sans-serif;
-        text-shadow: 5px 6px 19px rgb(99, 162, 4);
         color: rgb(252, 252, 252);
     }
 /*-------------||||||||---------------*/
@@ -48,10 +52,6 @@
 
     &__checkbox {
         display:none; /*Ocultamos el checkbox pues no nos interesa que se vea*/
-    }
-
-    &__checkbox:checked ~ .main {
-        filter: blur(6px);
     }
 
     &__checkbox:checked ~ .nav {
@@ -72,25 +72,25 @@
         position: fixed;
         top: 10px;
         left: 20px;
-        width: 55px;
-        height: 50px;
-        border-radius: 7px;
-        background-color: rgb(137, 199, 14);
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        background-color: #89c70e;
         z-index: 49;
     }
 
     /*STYLE IC0N-NAV*/
     &__icon {
     position: relative;
-    margin-top: 23px;
+    margin-top: 16px;
     margin-left: 10px;
     }
     &__icon, &__icon::before, &__icon::after {              
-    width: 35px;
-    height: 5px;
-    z-index: 49;
-    background-color: rgb(255, 255, 255);
-    display: inline-block;
+        width: 15px;
+        height: 3px;
+        z-index: 49;
+        background-color: white;
+        display: inline-block;
     }
 
     &__icon::before, &__icon::after {
@@ -100,16 +100,16 @@
         transition: all .2s; 
     }
     &__icon::before {              
-    top: -12px; 
+    top: -7px; 
     }
     &__icon::after {              
-    top: 12px; 
+    top: 7px; 
     }
     &__button:hover &__icon::before {
-        top: -12px;
+        top: -7px;
     }
     &__button:hover &__icon::after {
-        top: 12px; 
+        top: 7px; 
     }
     &__checkbox:checked + &__button &__icon {    
         background-color: transparent; 
@@ -133,31 +133,33 @@
     position: fixed;
     top: 10px;
     left: 20px;
-    width: 55px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 7px;
-    background-color: rgb(137, 199, 14);
+    background-color: #89c70e;
     z-index: 49;
 }
 
 .left-arrow{
     position: absolute;
     background-color: #fff;
-    height: 5px;
-    width: 30px;
-    top: 22px;
-    right: 11px;
+    height: 3px;
+    width: 20px;
+    top: 16px;
+    left: 7px;
+
 
     &::before{
         content: '';
         position: absolute;
         background-color: #fff;
-        height: 5px;
-        width: 20px;
-        top: -5px;
-        right: 14px;
-        -webkit-transform: rotate(-42deg);
-        transform: rotate(-42deg);
+        height: 3px;
+        width: 11px;
+        top: -4.5px;
+        left: -2px;
+        -webkit-transform: rotate(-44deg);
+        transform: rotate(-44deg);
+        -webkit-transition: .5s;
         transition: .5s;
     }
     &::after{
@@ -165,12 +167,13 @@
         display: block;
         position: absolute;
         background-color: #fff;
-        height: 5px;
-        width: 20px;
-        top: 5px;
-        right: 14px;
-        -webkit-transform: rotate(42deg);
-        transform: rotate(42deg);
+        height: 3px;
+        width: 12px;
+        top: 3px;
+        left: -3px;
+        -webkit-transform: rotate(46deg);
+        transform: rotate(46deg);
+        -webkit-transition: .5s;
         transition: .5s;
     }
 }

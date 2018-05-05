@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+<div class="header-fixed"></div>
+    @extends('layouts.nav')
     @yield('content')
 </body>
 </html>

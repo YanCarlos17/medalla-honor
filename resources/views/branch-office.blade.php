@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <header class="header">
+   <header class="header">
         <div class="medals">
             <img src="" alt="" class="medal medal-gold">
             <img src="" alt="" class="medal medal-silver">

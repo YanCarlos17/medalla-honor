@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <div class="header-fixed"></div>
+    
     @include('layouts.nav')    
     <header class="header">
         <div class="medals">
