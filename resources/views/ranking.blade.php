@@ -5,19 +5,7 @@
 @section('content')
 <div class="container">
     <div class="header-fixed"></div>
-        <input type="checkbox" class="nav__checkbox" id="nav-toogle"/>
-        <label for="nav-toogle" class="nav__button">
-            <span class="nav__icon">&nbsp;</span>
-        </label>
-        <nav class="nav">
-            <div class="nav__list">
-                <a href="#" class="nav__item">Item 1</a>
-                <a href="#" class="nav__item">Item 2</a>
-                <a href="#" class="nav__item">Item 3</a>
-                <a href="#" class="nav__item">Item 4</a>
-                <a href="#" class="nav__item">Item 5</a>
-            </div>
-        </nav>
+    @include('layouts.nav')    
     <header class="header">
         <div class="medals">
             <img src="" alt="" class="medal medal-gold">
