@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Validator;
 
 class LoginController extends Controller
 {
@@ -17,24 +18,33 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        try{/* Valida los datos del formulario de inicio de sesión */
-            $this->validate($request,[
+        try{
+            $validator = Validator::make( $request->all(), [
                 'usuario' => 'required|string',
-                'codigo' => 'required|numeric:4',
+                'codigo' => 'required|numeric:4'
             ]);
 
-            if ( Auth::attempt(['username' => $request->get('usuario'), 'access_code' => $request->get('codigo'), 'password' => 'mdhr']) )
+            $errors = new \Illuminate\Support\MessageBag();
+            $errors->add('error','Nombre de usuario y/o código de acceso son incorrectos.');
+
+            if( $validator->fails() )
+            {
+                return redirect()->route('login')->withErrors($errors);
+            }
+            elseif( Auth::attempt(['username' => $request->get('usuario'), 'access_code' => $request->get('codigo'), 'password' => 'mdhr']) )
             {
                 return redirect()->route('ranking');
             }
             else
             {
-                return redirect()->route('login');
+                return redirect()->route('login')->withErrors($errors);
             }
         }
         catch(\Exception $e)
         {
-            dd($e);
+            $errors = new Illuminate\Support\MessageBag();
+            $errors->add('error', $e);
+            return redirect()->route('login')->withErrors($errors);
         }
     }
 
