@@ -16,8 +16,8 @@
     <main>
         <form class="form" action="{{ route('login_post') }}" method="post">
             {{ csrf_field() }}
-            <input type="text" placeholder="Nombre de usuario" name="usuario">
-            <input type="text" placeholder="Código de acceso" name="codigo">
+            <input type="text" placeholder="Nombre de usuario" name="usuario" required>
+            <input type="number" placeholder="Código de acceso" name="codigo" size="4" required>
             <button type="submit" class="btn" >Ingresar</button>
         </form>
     </main>
