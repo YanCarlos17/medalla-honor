@@ -8,6 +8,13 @@
         
     </header>
 
+    
+        <a href="{{route('ranking')}}">
+            <div class="return">
+                <span class="left-arrow">&nbsp;</span>
+            </div>
+        </a>
+
     <main>
         <h1>Perfil</h1>
         <div class="profile">
