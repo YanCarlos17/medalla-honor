@@ -18,7 +18,10 @@
             
             <p class="profile__info">
                 {{ $user->name }}<br>
-                Mayorista<br>
+            @foreach( $user->specializations as $specialization )
+                <span>{{$specialization->name}}</span>
+            @endforeach
+                <br>
                 <a href="{{ route('branch-ofice') }}">Mis sucursales</a>
             </p>
         </div>
