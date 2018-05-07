@@ -8,7 +8,7 @@
         
     </header>
 
-    <main>
+    <main class="main">
         <h1>Perfil</h1>
         <div class="profile">
             <figure class="profile_image">
