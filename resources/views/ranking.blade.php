@@ -3,6 +3,7 @@
 @section('title','Ranking')
 
 @section('content')
+@extends('layouts.nav')
 <div class="container">
     
     

@@ -3,20 +3,47 @@
     top: 0;
     width: 100%;
     height: 50px;
-    background-color: #004FFF;
+    background-color: $dark-blue;
     z-index: 49;
 }
 
 .header{
     margin-top: 70px;
+
+    &__title{
+        color: $golden;
+        font-family: 'Roboto', sans-serif;
+        font-size: 23px;
+        font-weight: 400;
+        margin-top: 50px;
+        text-transform: uppercase;
+    }
+    &__title span{
+        font-size: 23px;
+        font-weight: 100;
+    }
+    &__medals{
+        position: relative;
+        margin-top: -20px;
+        width: 100%;
+        height: 30%;
+        text-align: center;
+        box-sizing: border-box;
+
+        .medal{
+            width: 70%;
+        }
+    }
+    &__parraph{
+        color: $golden;
+        font-size: 21px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+    }
 }
 
 
 /*Damos estilos al menú*/
-
-a{
-    text-decoration: none;
-}
 
 .nav {
     position: absolute;
@@ -26,9 +53,9 @@ a{
     left: -665px;
     padding-top: 100px;
     background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 36px 0px 70px -2px rgb(4, 9, 131);
+    box-shadow: 36px 0px 70px -2px $dark-blue;
     transition: all .5s ease;
-    z-index: 45; 
+    z-index: 999; 
  
     &__list{
         margin-top: 30px;
@@ -41,7 +68,7 @@ a{
         margin-left: 20px;
         line-height: 2;
         position: relative;
-        border-bottom: .5px solid rgb(183, 184, 184);
+        border-bottom: .5px solid $golden;
         background-color: transparent;
         font-family: 'Lato', sans-serif;
         color: rgb(252, 252, 252);
@@ -80,7 +107,7 @@ a{
         height: 35px;
         border-radius: 5px;
         background-color: #89c70e;
-        z-index: 49;
+        z-index: 9999;
     }
 
     /*STYLE IC0N-NAV*/

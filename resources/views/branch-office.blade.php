@@ -3,14 +3,16 @@
 @section('title','Ranking')
 
 @section('content')
+
 <div class="container">
-   <header class="header">
+<header class="header">
         <div class="medals">
             <img src="" alt="" class="medal medal-gold">
             <img src="" alt="" class="medal medal-silver">
             <img src="" alt="" class="medal medal-bronze">
         </div>
     </header>
+    @extends('layouts.nav')
     <main>
         <h1>Mis sucursales</h1>
         <div class="tabs">

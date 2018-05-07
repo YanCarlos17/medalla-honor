@@ -1,13 +1,30 @@
 .form{
-    width: 100%;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+   
 
-    input{
+    &__input{
         display: block;
-        width: 80%;
+        width: 100%;
         margin-bottom: 15px;
+        color: #fff;
         margin-top: 30px;
-        margin-left: auto;
-        margin-right: auto;
         padding: 7px 15px;
+        background-color: #01509b;   
+        border: none; 
     }
+    &__input:focus {
+        box-shadow: 0 0 5px rgb(251, 255, 0);border:1px solid rgba(251, 255, 0, 0.8) !important;
+    }
+    
+    &__line{
+        background-color: #01509b;
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;  
+    }
+
 }
