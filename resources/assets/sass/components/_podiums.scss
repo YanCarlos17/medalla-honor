@@ -2,13 +2,15 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    padding: 10px;
+    background-color: $dark-blue;
     .podium{
         text-align: center;
         &__position{
-
+      
         }
         &__img{
-
+        
         }
         &__name{
 

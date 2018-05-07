@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     height: 50px;
-    background-color: $dark-blue;
+    background-color: transparent;
     z-index: 49;
 }
 
@@ -39,6 +39,51 @@
         font-size: 21px;
         font-weight: 100;
         font-family: 'Roboto', sans-serif;
+    }
+}
+
+.header2{
+    width: 100%;
+    padding-top: 60px;
+    margin-top: 1px;
+    background-color: #001781;
+    height: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    &__left{
+        width: 50%;
+        float: left;
+    }
+    &__right{
+        width: 50%;
+        float: left;
+        padding-left: 10px;
+    }
+    &__medals{
+        width: 90%;
+        margin-top: -60px;
+    }
+    &__parraph{
+        color: $golden;
+        margin-left: 20px;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+    }
+    &__parraph span{
+        color: $golden;
+        font-size: 11px;
+        font-weight: 100 !important;
+        text-transform: none;
+    }
+    &__title{
+        color: $golden;
+        margin-left: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        padding-top: 40px; 
     }
 }
 
@@ -92,7 +137,7 @@
         margin-left:0px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
     }
     &__checkbox:checked ~ &__button {
-        background-color: rgb(137, 199, 14);
+        background-color: transparent;
         transition: all .5s;
     }
 
@@ -106,7 +151,7 @@
         width: 35px;
         height: 35px;
         border-radius: 5px;
-        background-color: #89c70e;
+        background-color: transparent;
         z-index: 9999;
     }
 

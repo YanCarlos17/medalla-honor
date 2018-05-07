@@ -3,6 +3,7 @@
     height: 900px;
     position: relative;
     overflow: hidden;
+    background-color: #001781;
 
     input[type=radio]{
         display: none;
@@ -15,6 +16,7 @@
             display: inline-block;
             width: 32.5%;
             text-align: center;
+            color: $golden;
         }
     }
 }
@@ -27,6 +29,7 @@
     opacity: 1;
     transform: translateX(100%);
     transition: all .3s;
+    
 
     &__trigger{
         &:checked + label{
