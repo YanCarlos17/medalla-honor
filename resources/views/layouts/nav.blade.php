@@ -7,8 +7,8 @@
         <div class="nav__list">
             <a href="{{route('profile')}}" class="nav__item">Profile</a>
             <a href="#" class="nav__item">Coins</a>
-            <a href="{{route('branch-ofice')}}" class="nav__item">Sucursales</a>
+            <a href="{{route('branch-ofice')}}" class="nav__item">Branch-Offices</a>
             <a href="{{route('ranking')}}" class="nav__item">Ranking</a>
-            <a href="#" class="nav__item">Especialización</a>
+            <a href="#" class="nav__item">Specialization</a>
         </div>
     </nav>

@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     
-    @include('layouts.nav')    
+    
     <header class="header">
         <div class="medals">
             <img src="" alt="" class="medal medal-gold">
