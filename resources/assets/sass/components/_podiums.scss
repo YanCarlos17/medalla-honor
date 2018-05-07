@@ -2,11 +2,10 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding: 10px;
     background-color: $dark-blue;
+    text-align: center;
     .podium{
         text-align: center;
-        padding: 10px;
         &__position{
       
         }

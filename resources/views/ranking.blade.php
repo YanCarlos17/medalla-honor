@@ -35,18 +35,6 @@
                         <h3 class="podium__name">{{ $top->name }}</h3>
                         <p class="podium__score">{{ $top->total_score }} pts</p>
                     </div>
-                    <div class="podium">
-                        <span class="podium__position">#{{ $index+1 }}</span>
-                        <img class="podium__img" src="{{asset('../public/img/plata.png')}}" alt="">
-                        <h3 class="podium__name">{{ $top->name }}</h3>
-                        <p class="podium__score">{{ $top->total_score }} pts</p>
-                    </div>
-                    <div class="podium">
-                        <span class="podium__position">#{{ $index+2 }}</span>
-                        <img class="podium__img" src="{{asset('../public/img/bronce.png')}}" alt="">
-                        <h3 class="podium__name">{{ $top->name }}</h3>
-                        <p class="podium__score">{{ $top->total_score }} pts</p>
-                    </div>
                 @endforeach
                 </div>
                 <table class="table">
@@ -127,20 +115,8 @@
                     <div class="podiums">
                         @foreach($supermarkettop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#{{ $index }}</span>
-                                <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
-                                <h3 class="podium__name">{{ $top->name }}</h3>
-                                <p class="podium__score">{{ $top->score }} pts</p>
-                            </div>
-                            <div class="podium">
                                 <span class="podium__position">#{{ $index+1 }}</span>
-                                <img class="podium__img" src="{{asset('../public/img/plata.png')}}" alt="">
-                                <h3 class="podium__name">{{ $top->name }}</h3>
-                                <p class="podium__score">{{ $top->score }} pts</p>
-                            </div>
-                            <div class="podium">
-                                <span class="podium__position">#{{ $index+2 }}</span>
-                                <img class="podium__img" src="{{asset('../public/img/bronce.png')}}" alt="">
+                                <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
