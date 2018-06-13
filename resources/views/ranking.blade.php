@@ -23,21 +23,29 @@
     <main>
         
         <div class="panels">
-            <input class="panel__trigger" type="radio" value="nacional" name="ranking" id="nacional" checked><label for="nacional">Nacional</label>
-            <input class="panel__trigger" type="radio" value="especializacion" name="ranking" id="especializacion"><label for="especializacion">Especialización</label>
-            <label class="panel__trigger"><a href="{{ route('profile') }}">Perfil</a></label>
-            <div class="panel" id="nacional-content">
+            
+
+
+
+
+
+            <input class="panel__trigger" type="radio" value="nacional" name="ranking" id="nacional" checked><label for="nacional" class="nacional">Nacional</label>
+            <input class="panel__trigger" type="radio" value="especializacion" name="ranking" id="especializacion"><label for="especializacion" class="especializacion">Especialización</label>
+            <label id="label" class="panel__trigger"><a href="{{ route('profile') }}">Perfil</a></label>
+
+            <div class="panel animated" id="nacional-content">
                 <div class="podiums">
                 @foreach($nationaltop as $index => $top)
                     <div class="podium">
-                        <span class="podium__position">#{{ $index }}</span>
-                        <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
+                        
+                        <img class="podium__img" src="{{ asset('img/oro.png') }}" alt="">
+                        <span class="podium__position">{{ $index+1 }}</span>
                         <h3 class="podium__name">{{ $top->name }}</h3>
                         <p class="podium__score">{{ $top->total_score }} pts</p>
                     </div>
                 @endforeach
                 </div>
-                <table class="table">
+                <table class="table-rank">
                     <tr>
                         <th>No</th>
                         <th>Nombre</th>
@@ -52,23 +60,24 @@
                 @endforeach
                 </table>
             </div>
-            <div class="panel" id="especializacion-content">
+            <div class="panel animated" id="especializacion-content">
                 <div class="panels">
-                    <input class="panel__trigger" type="radio" value="tiendas" name="especialidad" id="tiendas" checked><label for="tiendas">Tiendas</label>
-                    <input class="panel__trigger" type="radio" value="mayoristas" name="especialidad" id="mayoristas"><label for="mayoristas">Mayoristas</label>
-                    <input class="panel__trigger" type="radio" value="supermercados" name="especialidad" id="supermercados"><label for="supermercados">Supermercados</label>
-                    <div class="panel" id="tiendas-content">
+                    <input class="panel__trigger" type="radio" value="tiendas" name="especialidad" id="tiendas" checked><label for="tiendas" class="tiendas">Tiendas</label>
+                    <input class="panel__trigger" type="radio" value="mayoristas" name="especialidad" id="mayoristas"><label for="mayoristas" class="mayoristas">Mayoristas</label>
+                    <input class="panel__trigger" type="radio" value="supermercados" name="especialidad" id="supermercados"><label for="supermercados" class="supermercados">Supermercados</label> 
+                    <div class="panel animated" id="tiendas-content">
                         <div class="podiums">
                         @foreach($storetop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#{{ $index+1 }}</span>
+                                
                                 <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
+                                <span class="podium__position">{{ $index+1 }} Puesto</span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
                         @endforeach
                         </div>
-                        <table class="table">
+                        <table class="table-rank">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
@@ -84,18 +93,18 @@
                         </table>  
                     </div>
 
-                    <div class="panel" id="mayoristas-content">
+                    <div class="panel animated" id="mayoristas-content">
                         <div class="podiums">
                         @foreach($wholesalertop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#{{ $index+1 }}</span>
                                 <img class="podium__img" src="{{asset('../public/img/plata.png')}}" alt="">
+                                <span class="podium__position">{{ $index+1 }} Puesto</span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
                         @endforeach
                         </div>
-                        <table class="table">
+                        <table class="table-rank">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
@@ -111,18 +120,20 @@
                         </table>
                     </div>
 
-                    <div class="panel" id="supermercados-content">
+                    <div class="panel animated" id="supermercados-content">
                     <div class="podiums">
                         @foreach($supermarkettop as $index => $top)
                             <div class="podium">
-                                <span class="podium__position">#{{ $index+1 }}</span>
-                                <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
+                                
+                                <img class="podium__img" src="{{asset('../public/img/bronce.png')}}" alt="">
+                                <span class="podium__position">{{ $index+1 }} Puesto</span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
+
                             </div>
                         @endforeach
                         </div>
-                        <table class="table">
+                        <table class="table-rank">
                             <tr>
                                 <th>No</th>
                                 <th>Nombre</th>
@@ -142,4 +153,7 @@
         </div>
     </main>
 </div>
+<script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/ranking.js')}}"></script>
+   
 @stop

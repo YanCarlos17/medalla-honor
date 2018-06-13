@@ -64,23 +64,24 @@
     &__parraph{
         color: $golden;
         margin-left: 20px;
-        font-size: 13px;
+        font-size: 10px;
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
         text-transform: uppercase;
     }
     &__parraph span{
         color: $golden;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 100 !important;
         text-transform: none;
     }
     &__title{
+        padding-top: 10px;
+        font-size:21px;
         color: $golden;
         margin-left: 20px;
         font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        padding-top: 30px; 
+        font-weight: 300; 
     }
 }
 
@@ -101,7 +102,7 @@
  
     &__list{
         margin-top: 30px;
-        font-size: 20px;
+        font-size: 15px;
     }
 /*Estilos de los li del menú*/
     &__item {
@@ -249,4 +250,46 @@
         -webkit-transition: .5s;
         transition: .5s;
     }
+}
+.nav2{
+    position: absolute;
+    z-index:99999;
+    list-style: none;
+}
+    .nav2 > li {
+        float:left;
+        margin: 20px;
+    }
+
+    .nav2 li a {
+        color:#fff;
+        text-decoration:none;
+        display:block;
+    }
+
+    .nav2 li a:hover {
+        background-color:#434343;
+    }
+
+    .nav2 li ul {
+        display:none;
+        position:absolute;
+        min-width:110px;
+    }
+
+    .nav2 li:hover > ul {
+        display:block;
+    }
+
+    .nav2 li ul li {
+        position:relative;
+    }
+
+    
+
+.nav3{
+    
+    list-style: none;
+    text-align: center; 
+    background-color: $dark-blue;
 }

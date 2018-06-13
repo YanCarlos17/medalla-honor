@@ -4,19 +4,25 @@
     justify-content: center;
     background-color: $dark-blue;
     text-align: center;
-    .podium{
-        text-align: center;
-        &__position{
-      
-        }
-        &__img{
-        
-        }
-        &__name{
+    
+}
+.podium{
+    text-align: center !important;
+    width: 30%;
+    font-size: 11px;
+    padding: 10px;
+    &__position{
+       font-size: 18px;
+    }
+    &__img{
+        width: 65px;
+        height: 65px;
+        margin: 5px;
+    }
+    &__name{
 
-        }
-        &__score{
-            
-        }
+    }
+    &__score{
+        
     }
 }
