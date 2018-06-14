@@ -1,0 +1,21 @@
+.profile-table{
+    width: 100%;
+    margin: 20px auto 0;
+    
+}
+
+.profile-td{
+    width: 50%;
+    height: 55px;
+    border: 1px solid transparent;
+    background-color: #001781;
+    border-radius: 5px;
+    text-align: center;
+}
+.td1{
+    color: $skyblue;
+    border-right: 1px solid $skyblue;
+}
+.td2{
+    border-left: 1px solid $skyblue;
+}

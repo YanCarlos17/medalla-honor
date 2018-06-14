@@ -39,7 +39,7 @@
                     <div class="podium">
                         
                         <img class="podium__img" src="{{ asset('img/oro.png') }}" alt="">
-                        <span class="podium__position">{{ $index+1 }}</span>
+                        <span class="podium__position">Distribuidor:&nbsp;<br>{{ $index+1 }}</span>
                         <h3 class="podium__name">{{ $top->name }}</h3>
                         <p class="podium__score">{{ $top->total_score }} pts</p>
                     </div>

@@ -63,23 +63,24 @@
     }
     &__parraph{
         color: $golden;
-        margin-left: 20px;
-        font-size: 10px;
+        margin: 17px 19px;
+        font-size: 14px;
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
         text-transform: uppercase;
+        position: absolute;
     }
     &__parraph span{
         color: $golden;
-        font-size: 10px;
-        font-weight: 100 !important;
+        font-size: 14px;
+        font-weight: 100;
         text-transform: none;
     }
     &__title{
-        padding-top: 10px;
-        font-size:21px;
+        padding-top: 55px;
+        font-size: 21px;
         color: $golden;
-        margin-left: 20px;
+        margin-left: 18px;
         font-family: 'Roboto', sans-serif;
         font-weight: 300; 
     }
@@ -158,6 +159,7 @@
     position: relative;
     margin-top: 16px;
     margin-left: 10px;
+    width: 17px;
     }
     &__icon, &__icon::before, &__icon::after {              
         width: 15px;

@@ -19,41 +19,47 @@
 
     <main class="main">
        <div class="profile">
-            <figure class="profile_image">
-                <img src="" alt="">
-                <figcaption class="profile__position">Posición nacional #{{$user->national_position}}</figcaption>
-            </figure>
-            
+
+            <div class="profile__image">
+                <i class="fas fa-user"></i>
+            </div>
+
             <p class="profile__info">
-            Nombre:&nbsp;{{ $user->name }}<br>
+                Nombre:&nbsp;<span>{{ $user->name }}</span><br>
+                
+                Posición nacional:&nbsp;<span>{{$user->national_position}}</span><br>
+                Ciudad:&nbsp;<span>Cali{{--{{ $city->name }}--}}</span><br>
             @foreach( $user->specializations as $specialization )
                 <span>{{$specialization->name}}</span>
             @endforeach
                 <br>
                 <a href="{{ route('branch-ofice') }}">Mis sucursales</a>
+                {{-- <p class="profile__position">Posición nacional #{{$user->national_position}}</p> --}}
             </p>
+            
+
         </div>
         <div class="score">
-            <h2 class="score__title">Puntaje por categorías</h2>
+            <h2 class="score__title">Puntaje por categoría</h2>
 
-            <table>
+            <table class="profile-table">
                 <tr>
-                    <td>Efectividad</td>
-                    <td><span>100 pts</span></td>
+                    <td class="profile-td td1">Efectividad</td>
+                    <td class="profile-td td2"><span>100 pts</span></td>
                 </tr>
                 <tr>
-                    <td>Surtido recomendado</td>
-                    <td><span>250 pts</span></td>
+                    <td class="profile-td td1">Surtido recomendado</td>
+                    <td class="profile-td td2"><span>250 pts</span></td>
                 </tr>
                 <tr>
-                    <td>Evacuación</td>
-                    <td><span>300pts</span></td>
+                    <td class="profile-td td1">Evacuación</td>
+                    <td class="profile-td td2"><span>300pts</span></td>
                 </tr>
             </table>
 
 
 
-            <div class="score__category">
+            {{-- <div class="score__category">
                 <h3 class="score__subtitle">Resultados</h3>
                 
                 <h3 class="score__subtitle">Ejecución</h3>
@@ -65,7 +71,7 @@
                 <ul>
                     <li>ITT <span>100 pts</span></li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
 
     </main>
