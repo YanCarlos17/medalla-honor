@@ -13,8 +13,8 @@
         </div>
     </header>
     @extends('layouts.nav')
-    <main>
-        <h1>Mis sucursales</h1>
+    <main class="branch__main">
+        <h1 class="branch__title">Mis sucursales</h1>
         <div class="tabs">
         @foreach( $branchoffices as $branchoffice)
             <div class="tab">

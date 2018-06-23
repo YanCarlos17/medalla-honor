@@ -17,5 +17,14 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 30px;
+        @media screen and (min-width:1024px){
+            width: 50%;
+        }
+    }    
+    &__form:hover{
+        background-color: $oro;
+        color: $dark-blue;
+        font-weight: bold;
     }
+    
 }

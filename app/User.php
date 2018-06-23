@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user', 'access_code', 'name', 'email', 'city_id', 'branch_offices', 'total_score',
+        'username', 'access_code', 'name', 'email', 'city_id', 'branch_offices', 'total_score',
     ];
 
     /**
@@ -26,11 +26,6 @@ class User extends Authenticatable
     protected $hidden = [
         'access_code', 'password'
     ];
-
-    protected $table = 'distributor';
-
-
-    public $timestamps = false;
 
     // Relaciones
     public function branchoffices()

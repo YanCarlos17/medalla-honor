@@ -11,8 +11,13 @@
     width: 30%;
     font-size: 11px;
     padding: 10px;
+    font-weight: 100;
     &__position{
-       font-size: 14px;
+        font-size: 14px;
+        font-weight: 400;
+        & span{
+           color: $skyblue;
+        }
     }
     &__img{
         width: 65px;
@@ -20,9 +25,21 @@
         margin: 5px;
     }
     &__name{
-
+       font-weight: 400;
+       font-size: 15px;
+       color:$golden;
     }
     &__score{
-        
+        font-size: 14px;
+        margin-top: 5px;
     }
+}
+.gold-medal{
+    background-image: url(../../../../public/img/oro.png);
+}
+.silver-medal{
+    background-image: url(../../../../public/img/plata.png);
+}
+.bronze-medal{
+    background-image: url(../../../../public/img/bronce.png);
 }

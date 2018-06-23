@@ -24,11 +24,6 @@
         
         <div class="panels">
             
-
-
-
-
-
             <input class="panel__trigger" type="radio" value="nacional" name="ranking" id="nacional" checked><label for="nacional" class="nacional">Nacional</label>
             <input class="panel__trigger" type="radio" value="especializacion" name="ranking" id="especializacion"><label for="especializacion" class="especializacion">Especialización</label>
             <label id="label" class="panel__trigger"><a href="{{ route('profile') }}">Perfil</a></label>
@@ -37,10 +32,9 @@
                 <div class="podiums">
                 @foreach($nationaltop as $index => $top)
                     <div class="podium">
-                        
-                        <img class="podium__img" src="{{ asset('img/oro.png') }}" alt="">
-                        <span class="podium__position">Distribuidor:&nbsp;<br>{{ $index+1 }}</span>
-                        <h3 class="podium__name">{{ $top->name }}</h3>
+                        <img class="podium__img" src="{{ $img }}" alt="">
+                        <span class="podium__position">Distribuidor:&nbsp;<br><span>{{ $index+1 }}</span></span><br>
+                         <h3 class="podium__name">{{ $top->name }}</h3> 
                         <p class="podium__score">{{ $top->total_score }} pts</p>
                     </div>
                 @endforeach
@@ -51,13 +45,13 @@
                         <th>Nombre</th>
                         <th>Puntos</th>
                     </tr>
-                @foreach($national as $index => $position)
+                {{-- @foreach($national as $index => $position) --}}
                     <tr>
-                        <td>{{ $index + 4 }}</td>
-                        <td>{{ $position->name }}</td>
-                        <td>{{ $position->total_score }}</td>
+                        <td>{{$index+1}}</td> 
+                         <td>{{$position->name}}</td> 
+                        <td>{{$position->total_score}}</td> 
                     </tr>
-                @endforeach
+                {{-- @endforeach --}}
                 </table>
             </div>
             <div class="panel animated" id="especializacion-content">
@@ -67,14 +61,25 @@
                     <input class="panel__trigger" type="radio" value="supermercados" name="especialidad" id="supermercados"><label for="supermercados" class="supermercados">Supermercados</label> 
                     <div class="panel animated" id="tiendas-content">
                         <div class="podiums">
+
                         @foreach($storetop as $index => $top)
-                            <div class="podium">
-                                
-                                <img class="podium__img" src="{{asset('../public/img/oro.png')}}" alt="">
-                                <span class="podium__position">{{ $index+1 }} Puesto</span>
+                                @foreach($topnacional as $index => $top)
+                                    <div class="podium">
+                                    @if( $index+1 == 1)
+                                    {
+                                        <img src="{{ asset('images/oro.png')}}" alt="">
+                                    }@elseif( $index+1 == 2)
+                                    {
+                                        <img src="{{ asset('images/plata.png')}}" alt="">
+                                    }@else 
+                                    {   
+                                        <img src="{{ asset('images/bronce.png')}}" alt="">
+                                    }   
+                                @endforeach        
+                                <span class="podium__position"><span>{{ $index+1 }}°</span></span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
-                            </div>
+                                </div>
                         @endforeach
                         </div>
                         <table class="table-rank">
@@ -85,7 +90,7 @@
                             </tr>
                         @foreach($store as $index => $position)
                             <tr>
-                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $index + 1  }}</td>
                                 <td>{{ $position->name }}</td>
                                 <td>{{ $position->score }}</td>
                             </tr>
@@ -96,9 +101,20 @@
                     <div class="panel animated" id="mayoristas-content">
                         <div class="podiums">
                         @foreach($wholesalertop as $index => $top)
-                            <div class="podium">
-                                <img class="podium__img" src="{{asset('../public/img/plata.png')}}" alt="">
-                                <span class="podium__position">{{ $index+1 }} Puesto</span>
+                            @foreach($topnacional as $index => $top)
+                                <div class="podium">
+                                @if($index+1 == 1)
+                                {
+                                    <img src="{{ asset('images/oro.png')}}" alt="">
+                                }@elseif($index+1 == 2)
+                                {
+                                    <img src="{{ asset('images/plata.png')}}" alt="">
+                                }@elseif( $index+1 == 3)
+                                {
+                                    <img src="{{ asset('images/oro.png')}}" alt="">
+                                }   
+                            @endforeach 
+                            <span class="podium__position"><span>{{ $index+1 }}°</span></span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
                             </div>
@@ -112,7 +128,7 @@
                             </tr>
                         @foreach($wholesaler as $index => $position)
                             <tr>
-                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $index + 1 }}</td>
                                 <td>{{ $position->name }}</td>
                                 <td>{{ $position->score }}</td>
                             </tr>
@@ -123,10 +139,21 @@
                     <div class="panel animated" id="supermercados-content">
                     <div class="podiums">
                         @foreach($supermarkettop as $index => $top)
-                            <div class="podium">
-                                
-                                <img class="podium__img" src="{{asset('../public/img/bronce.png')}}" alt="">
-                                <span class="podium__position">{{ $index+1 }} Puesto</span>
+                            @foreach($wholesalertop as $index => $top)
+                                @foreach($topnacional as $index => $top)
+                                <div class="podium">
+                                    @if($index+1 == 1)
+                                    {
+                                        <img src="{{ asset('images/oro.png')}}" alt="">
+                                    }@elseif($index+1 == 2)
+                                    {
+                                        <img src="{{ asset('images/plata.png')}}" alt="">
+                                    }@else
+                                    {
+                                        <img src="{{ asset('images/oro.png')}}" alt="">
+                                    }   
+                                @endforeach 
+                                <span class="podium__position"><span>{{ $index+1 }}°</span></span>
                                 <h3 class="podium__name">{{ $top->name }}</h3>
                                 <p class="podium__score">{{ $top->score }} pts</p>
 
@@ -141,7 +168,7 @@
                             </tr>
                         @foreach($supermarket as $index => $position)
                             <tr>
-                                <td>{{ $index + 4 }}</td>
+                                <td>{{ $index + 1 }}</td>
                                 <td>{{ $position->name }}</td>
                                 <td>{{ $position->score }}</td>
                             </tr>

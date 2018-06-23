@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\User;
 use Validator;
 
@@ -15,7 +16,6 @@ class LoginController extends Controller
     {
         return View('index');
     }
-
     public function login(Request $request)
     {
         try{
@@ -27,11 +27,11 @@ class LoginController extends Controller
             $errors = new \Illuminate\Support\MessageBag();
             $errors->add('error','Nombre de usuario y/o código de acceso son incorrectos.');
 
-            if( $validator->fails() )
+            if( $validator->fails())
             {
                 return redirect()->route('login')->withErrors($errors);
             }
-            elseif( Auth::attempt(['username' => $request->get('usuario'), 'access_code' => $request->get('codigo'), 'password' => 'mdhr']) )
+            elseif( Auth::attempt(['username' => $request->get('usuario'), 'access_code' => $request->get('codigo'), 'password' => 'mdhr']))
             {
                 return redirect()->route('ranking');
             }
@@ -42,7 +42,7 @@ class LoginController extends Controller
         }
         catch(\Exception $e)
         {
-            $errors = new Illuminate\Support\MessageBag();
+            $errors = new \Illuminate\Support\MessageBag();
             $errors->add('error', $e);
             return redirect()->route('login')->withErrors($errors);
         }

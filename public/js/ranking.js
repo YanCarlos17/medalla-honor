@@ -1,4 +1,6 @@
 $('document').ready(function(){
+    
+    
 
     $('.especializacion').click(function(){
         $('#especializacion-content').removeClass('fadeOutRight'),
@@ -45,6 +47,8 @@ $('document').ready(function(){
         $('#supermercados-content').addClass('fadeOutRight')
         
     });
+
+    
    
     
 });

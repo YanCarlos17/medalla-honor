@@ -24,26 +24,23 @@ Route::get('/salir', [
     'as' => 'logout',
     'uses' => 'Auth\LoginController@logout'
 ]);
-
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/ranking', [
+Route::get('/ranking', [
         'as' => 'ranking',
-        'uses' => 'RankingController@index'
-    ]);
+        'uses' => 'RankingController@index']);
     
-    Route::get('/perfil', [
+Route::get('/perfil', [
         'as' => 'profile',
         'uses' => 'ProfileController@index'
-    ]);
+]);
     
-    Route::get('/sucursales', [
+Route::get('/sucursales', [
         'as' => 'branch-ofice',
         'uses' => 'BranchOfficeController@index'
-    ]);
+]);
 
-    Route::get('/actualizar-total-puntajes', [
+Route::get('/actualizar-total-puntajes', [
         'as' => 'update-total-score',
         'uses' => 'RankingController@update'
-    ]);
-});
+]);
+
 

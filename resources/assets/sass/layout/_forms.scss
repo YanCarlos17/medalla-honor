@@ -2,6 +2,9 @@
     width: 85%;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (min-width:1024px){
+        width: 40%;
+    }
    
 
     &__input{
@@ -14,8 +17,15 @@
         background-color: #01509b;
         border: none;
     }
+    &__input:hover{
+        background-color: $oro;
+        color: $dark-blue; 
+        font-weight: bold;
+    }
     &__input:focus {
-        box-shadow: 0 0 5px rgb(251, 255, 0);border:1px solid rgba(251, 255, 0, 0.8) !important;
+        box-shadow: 0 0 5px 
+        rgb(251, 255, 0);border:1px solid 
+        rgba(251, 255, 0, 0.8) !important;
     }
     
     &__line{

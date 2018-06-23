@@ -10,7 +10,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-
-        return View('profile')->with('user', $user);
+        return View('profile')
+        ->with('user', $user);
     }
 }

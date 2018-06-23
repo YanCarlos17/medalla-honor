@@ -26,9 +26,8 @@
 
             <p class="profile__info">
                 Nombre:&nbsp;<span>{{ $user->name }}</span><br>
-                
+                Ciudad:&nbsp;<span>{{--{{ $city->name }}--}}???</span><br>
                 Posición nacional:&nbsp;<span>{{$user->national_position}}</span><br>
-                Ciudad:&nbsp;<span>Cali{{--{{ $city->name }}--}}</span><br>
             @foreach( $user->specializations as $specialization )
                 <span>{{$specialization->name}}</span>
             @endforeach
@@ -56,22 +55,6 @@
                     <td class="profile-td td2"><span>300pts</span></td>
                 </tr>
             </table>
-
-
-
-            {{-- <div class="score__category">
-                <h3 class="score__subtitle">Resultados</h3>
-                
-                <h3 class="score__subtitle">Ejecución</h3>
-                <ul>
-                    <li>Codificación <span>100 pts</span></li>
-                    <li>Planes especiales <span>250 pts</span></li>
-                </ul>
-                <h3 class="score__subtitle">ITT</h3>
-                <ul>
-                    <li>ITT <span>100 pts</span></li>
-                </ul>
-            </div> --}}
         </div>
 
     </main>
